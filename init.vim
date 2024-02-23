@@ -6,6 +6,7 @@
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set scrolloff=10
 
 call plug#begin()
 
@@ -25,7 +26,7 @@ call plug#end()
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
-nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-q> :tabnext<CR>
 nnoremap <C-w> :tabprevious<CR>
