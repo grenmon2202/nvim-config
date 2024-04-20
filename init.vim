@@ -22,7 +22,8 @@ Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'windwp/nvim-autopairs'
 " Plug 'https://github.com/neovim/nvim-lspconfig'
 Plug 'folke/lsp-colors.nvim'
-Plug 'https://github.com/github/copilot.vim'
+" Plug 'https://github.com/github/copilot.vim'
+Plug 'kkoomen/vim-doge'
 
 call plug#end()
 
@@ -31,11 +32,20 @@ let g:NERDTreeDirArrowCollapsible="~"
 
 nnoremap <C-e> :NERDTreeToggle<CR>
 nnoremap <C-t> :tabnew<CR>
-nnoremap <C-q> :tabnext<CR>
-nnoremap <C-w> :tabprevious<CR>
+nnoremap <C-w> :tabnext<CR>
+nnoremap <C-q> :tabprevious<CR>
 
 :colorscheme jellybeans
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+inoremap <expr> <TAB> pumvisible() ? coc#_select_confirm() : "<TAB>"
+
+let g:doge_doc_standard_python = 'numpy'
+nmap <silent> <C-d> <Plug>(doge-generate)
+nmap <silent> <C-TAB> <Plug>(doge-comment-jump-forward)
+nmap <silent> <C-S-TAB> <Plug>(doge-comment-jump-backward)
+imap <silent> <C-TAB> <Plug>(doge-comment-jump-forward)
+imap <silent> <C-S-TAB> <Plug>(doge-comment-jump-backward)
+smap <silent> <C-TAB> <Plug>(doge-comment-jump-forward)
+smap <silent> <C-S-TAB> <Plug>(doge-comment-jump-backward)
 
 lua << EOF
 require("nvim-autopairs").setup {}
